@@ -1,0 +1,46 @@
+<section class="section-reservation-page bg-white">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>SCANNED DETAILS</h2>
+      </div>
+    </div>
+    <div *ngIf="event$ | async as event" class="reservation-page">
+      <button class="btn btn-info" (click)="resetDetails()">Reset</button>
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <!-- CONTENT -->
+          <div class="reservation_content">
+            <hr />
+            <div class="row">
+              <div class="col-md-12">
+                <h4></h4>
+                <div>
+                  <span>Full Name:</span>
+                  <span class="detail">{{event?.fullName}}</span>
+                </div>
+                <div>
+                  <span>Event Description:</span>
+                  <span class="detail">{{event?.eventDescription}}</span>
+                </div>
+                <div>
+                  <span>Amount Paid:</span>
+                  <span class="detail">{{event?.amountPaid}}</span>
+                </div>
+                <div>
+                  <span>Status:</span>
+                  <span class="detail">{{event?.status}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- END / CONTENT -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,58 @@
+a {
+  cursor: pointer;
+}
+
+.avatar-image {
+  height: 50px;
+  width: 50px;
+}
+
+.avatar-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  border: solid 3px #e8c57a;
+}
+
+.welcome-header {
+  margin-top: 20px;
+  position: absolute;
+  margin-left: -160px;
+}
+
+.row span {
+  position: absolute;
+  width: 280px;
+  margin-left: -190px;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #e8c57a;
+}
+
+.logo {
+  color: #e8c57a;
+  margin-top: -50px;
+}
+
+.logo img {
+  color: #e8c57a;
+  height: 75px;
+  width: 140px;
+  /* margin-top: -50px; */
+}
+
+.logo a {
+  color: #e8c57a;
+}
+
+.row span {
+  padding-top: 45px;
+  padding-left: 40px;
+}
+
+.logo span {
+  padding-top: 50px;
+  padding-left: 90px;
+  width: 100%;
+}

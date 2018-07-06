@@ -1,0 +1,57 @@
+<div class="dashboard">
+  <div class="db-left">
+    <div class="db-left-1">
+      <h4></h4>
+      <p></p>
+    </div>
+    <div class="db-left-2">
+      <ul>
+        <li>
+          <a routerLink="/user/dashboard">
+            <img src="assets/images/icon/db1.png" alt="" /> Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/user/make-payment">
+            <img src="assets/images/icon/db3.png" alt="" />Pay For Event</a>
+        </li>
+        <li>
+          <a routerLink="/user/user-payments">
+            <img src="assets/images/icon/db6.png" alt="" /> My Payments</a>
+        </li>
+        <li>
+          <a routerLink="/user/user-events">
+            <img src="assets/images/icon/db4.png" alt="" /> My Events</a>
+        </li>
+        <li>
+          <a routerLink="/user/create-event">
+            <img src="assets/images/icon/db4.png" alt="" /> Create Event</a>
+        </li>
+        <li>
+          <a routerLink="/user/profile">
+            <img src="assets/images/icon/db7.png" alt="" /> My Profile</a>
+        </li>
+        <li>
+          <a (click)="logout()">
+            <img src="assets/images/icon/db8.png" alt="" /> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+
+  <div class="db-righ">
+    <h4>Notifications(2)</h4>
+    <ul>
+      <li>
+        <a href="#!">
+          <img src="assets/images/icon/dbr1.jpg" alt="">
+          <h5>Joseph, write a review</h5>
+          <p>All the Lorem Ipsum generators on the</p>
+          <span>2 hours ago</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

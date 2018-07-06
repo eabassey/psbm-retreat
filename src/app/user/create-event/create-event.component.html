@@ -1,0 +1,35 @@
+<div class="db-cent">
+  <app-welcome-header></app-welcome-header>
+
+  <div class="db-profile-edit">
+    <form class="row" [formGroup]="createEventForm" (submit)="createEvent()">
+      <div class="form-group">
+        <div class="row">
+          <label>Select Event:</label>
+          <kendo-dropdownlist [data]="currentEvents" style="width: 500px;" formControlName="selectedEvent">
+          </kendo-dropdownlist>
+        </div>
+
+        <!-- <div class="row">
+          <label>First Names:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm.get('firstNames').touched && profileForm.get('firstNames').invalid">
+            <small style="color:red">Names are required</small>
+          </span>
+          <input kendoTextBox type="text" style="width: 500px;" class="input-field" formControlName="firstNames">
+        </div> -->
+
+        <!-- <div class="row">
+          <label>Date of birth:</label>
+          <kendo-datepicker style="width: 500px;" formControlName="dateOfBirth"></kendo-datepicker>
+        </div> -->
+
+      </div>
+      <div>
+        <button class="btn btn-info" [routerLink]="['/user/user-events']">Cancel</button>
+        <button class="btn btn-success" [disabled]="createEventForm.invalid" type="submit">Create Event</button>
+      </div>
+    </form>
+  </div>
+</div>

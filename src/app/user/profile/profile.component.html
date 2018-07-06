@@ -1,0 +1,103 @@
+<div class="db-cent">
+  <app-welcome-header></app-welcome-header>
+
+  <div class="db-profile-edit">
+    <h3>Update Profile</h3>
+    <form class="row" [formGroup]="profileForm" (submit)="updateProfile()">
+      <div class="form-group">
+        <div class="row">
+          <div>
+            <label class="col s4">Upload Profile Picture:</label>
+            <div class="input-field col s8">
+              <input type="file" (change)="uploadFile($event)" accept=".png,.jpg">
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped bg-success" role="progressbar" [style.width]="(uploadProgress | async) + '%'"
+                [attr.aria-valuenow]="(uploadProgress | async)" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div *ngIf="photoURL$ | async; let photo" class="alert alert-info" role="alert">
+              File uploaded:
+              <img [src]="photo" />
+              <!-- <a [href]="photo">{{photo}}</a> -->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <label>Display Name:</label>
+          <input kendoTextBox type="text" style="width: 500px;" class="input-field" formControlName="displayName">
+        </div>
+
+        <div class="row">
+          <label>First Names:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm?.get('firstNames').touched && profileForm?.get('firstNames').invalid">
+            <small style="color:red">Names are required</small>
+          </span>
+          <input kendoTextBox type="text" style="width: 500px;" class="input-field" formControlName="firstNames">
+        </div>
+
+        <div class="row">
+          <label>Last Name:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm?.get('lastName').touched && profileForm?.get('lastName').invalid">
+            <small style="color:red">Last Name is required</small>
+          </span>
+          <input kendoTextBox type="text" style="width: 500px;" class="input-field" formControlName="lastName">
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4">Gender:
+            <small style="color:red">*</small>
+          </label>
+          <div *ngIf="profileForm?.get('gender').touched && profileForm?.get('gender').invalid">
+            <small style="color:red">Gender is required</small>
+          </div>
+          <kendo-dropdownlist [data]="gender" style="width: 500px;" formControlName="gender">
+          </kendo-dropdownlist>
+        </div>
+
+        <div class="row">
+          <label>Date of birth:</label>
+          <kendo-datepicker style="width: 500px;" formControlName="dateOfBirth"></kendo-datepicker>
+        </div>
+
+        <div class="row">
+          <label class="col-sm-4">Country:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm?.get('country').touched && profileForm?.get('country').invalid">
+            <small style="color:red">Country is required</small>
+          </span>
+          <kendo-dropdownlist [data]="countries" style="width: 500px;" formControlName="country">
+          </kendo-dropdownlist>
+        </div>
+
+        <div class="row">
+          <label>ID / Passport No.:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm?.get('idNumber').touched && profileForm?.get('idNumber').invalid">
+            <small style="color:red">ID Number is required</small>
+          </span>
+          <input kendoTextBox type="text" class="input-field" style="width: 500px;" formControlName="idNumber">
+        </div>
+
+        <div class="row">
+          <label>Mobile Phone:
+            <small style="color:red">*</small>
+          </label>
+          <span *ngIf="profileForm?.get('mobilePhone').touched && profileForm?.get('mobilePhone').invalid">
+            <small style="color:red">Mobile Number is required</small>
+          </span>
+          <input kendoTextBox type="text" class="input-field" style="width: 500px;" formControlName="mobilePhone">
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-danger" [routerLink]="['/bookings']">Cancel</button>
+        <button class="btn btn-success" [disabled]="profileForm.invalid" type="submit">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

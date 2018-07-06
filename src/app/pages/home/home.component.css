@@ -1,0 +1,149 @@
+.ministry-section {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.row-ministry {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 100px;
+  margin-bottom: 100px;
+}
+
+.fullscreen-bg {
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.fullscreen-bg__video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: grayscale(100%);
+}
+
+.scroll-animation-button {
+  position: absolute;
+  text-align: center;
+  top: 77%;
+  left: 50%;
+  width: 100%;
+}
+
+.chevron {
+  position: absolute;
+  width: 36px;
+  height: 8px;
+  opacity: 0;
+  transform: scale3d(0.5, 0.5, 0.5);
+  animation: move 3s ease-out infinite;
+}
+
+.chevron:first-child {
+  animation: move 3s ease-out 1s infinite;
+}
+
+.chevron:nth-child(2) {
+  animation: move 3s ease-out 2s infinite;
+}
+
+.chevron:before,
+.chevron:after {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 51%;
+  background-color: #e8c57a;
+}
+
+.chevron:before {
+  left: 0;
+  transform: skew(0deg, 30deg);
+  background-color: #fff;
+  background-color: #e8c57a;
+}
+
+.chevron:after {
+  right: 0;
+  width: 50%;
+  transform: skew(0deg, -30deg);
+  background-color: #fff;
+  background-color: #e8c57a;
+}
+
+@keyframes move {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+.text {
+  display: block;
+  margin-top: 75px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-size: 14px;
+  white-space: nowrap;
+  margin-left: -97.5%;
+  color: #e8c57a;
+}
+
+.cards {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  background: #2a2b33;
+  border-radius: 12px;
+  /* box-shadow: outset 4px 4px 4px 4px #2a2b33; */
+  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
+}
+
+.cards:hover {
+  background: #e8c57a;
+  /* box-shadow: outset 4px 4px 4px 4px #2a2b33; */
+  box-shadow: 0px 20px 30px 3px #635a48;
+  cursor: pointer;
+}
+
+.badge-icon img {
+  margin-left: 40%;
+  height: 80px;
+  width: 80px;
+}
+
+.badge-description h4 {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+
+.cards :hover {
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 1;
+  }
+}
