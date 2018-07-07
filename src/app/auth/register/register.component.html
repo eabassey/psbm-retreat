@@ -17,10 +17,10 @@
         <div class="register-main">
           <div class="row-grid">
 
-            <span *ngIf="registerForm.get('firstName').touched && registerForm.get('firstName').invalid">
+            <span *ngIf="registerForm.get('firstNames').touched && registerForm.get('firstNames').invalid">
 
             </span>
-            <input type="text" formControlName="firstName" class="field-text" placeholder="First Name">
+            <input type="text" formControlName="firstNames" class="field-text" placeholder="First Names">
 
 
             <span *ngIf="registerForm.get('lastName').touched && registerForm.get('lastName').invalid">
