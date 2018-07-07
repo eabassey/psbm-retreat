@@ -4,26 +4,24 @@
 <div class="logo-wording">
   PROPHET SHEPHERD BUSHIRI MINISTRIES
 </div>
-<div class="main-login">
-  <form class="account_form">
+<div class="main-login" (submit)="login()">
+  <form [formGroup]="loginForm" class="account_form">
     <span style="color: #fff;" class="text-center">LOGIN ACCOUNT</span>
 
-    <input type="text" [(ngModel)]="email" name="email" class="field-text" placeholder="Email Address">
+    <input type="text" formControlName="email" class="field-text" placeholder="Email Address">
 
-    <input type="password" [(ngModel)]="password" name="password" placeholder="Password">
+    <input type="password" formControlName="password" placeholder="Password">
     <!-- <span class="view-pass">
                   <i class="hillter-icon-view"></i>
               </span> -->
-    <!-- <span style="color: red;font-size: 12px;" *ngIf="errorMessage">
-            {{errorMessage}}
-          </span>
-          <div class="field-form field-submit">
-            <button (click)="login()" [disabled]="!email || !password" class="awe-btn awe-btn-13">Login</button>
-            <a class="other-links" [routerLink]="['/auth/register']">Are you new here? Click here to Register</a>
-            <a class="other-links" [routerLink]="['/auth/forgot-password']"> Forgotten your password? Click here</a>
-          </div> -->
-    <input type="submit" placeholder="LOGIN">
-
+    <span style="color: red;font-size: 12px;" *ngIf="errorMessage">
+      {{errorMessage}}
+    </span>
+    <div class="field-form field-submit">
+      <button type="submit" [disabled]="loginForm.invalid" class="awe-btn awe-btn-13">Login</button>
+      <a class="other-links" [routerLink]="['/auth/register']">Are you new here? Click here to Register</a>
+      <a class="other-links" [routerLink]="['/auth/forgot-password']"> Forgotten your password? Click here</a>
+    </div>
   </form>
 
 </div>

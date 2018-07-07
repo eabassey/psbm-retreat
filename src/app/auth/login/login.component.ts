@@ -4,27 +4,37 @@ import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { ViewEncapsulation } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
   // encapsulation: ViewEncapsulation.Native
-
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   email: string;
   password: string;
   errorMessage: any;
+  loginForm: FormGroup;
   constructor(
     public authService: AuthService,
     private router: Router,
     private db: AngularFirestore,
-    private deviceService: DeviceDetectorService
-  ) { }
+    private deviceService: DeviceDetectorService,
+    private fb: FormBuilder
+  ) {}
+
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
   login() {
+    console.log(this.loginForm.value);
     this.authService
-      .login(this.email, this.password)
+      .login(this.loginForm.value.email, this.loginForm.value.password)
       .then(value => {
         // Store user login timestamp and env for audit
         // this.db
