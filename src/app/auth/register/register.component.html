@@ -13,12 +13,6 @@
     <fieldset>
 
       <legend>
-        <!-- <label>Display Name:
-
-        </label>
-        <span *ngIf="registerForm.get('displayName').touched && registerForm.get('displayName').invalid">
-        </span>
-        <input type="text" formControlName="displayName" class="field-text"> -->
 
         <div class="register-main">
           <div class="row-grid">
@@ -92,7 +86,7 @@
         Create Account
         <i *ngIf="loading$ | async" class="fas fa-spinner fa-pulse"></i>
       </button>
-      <button class="btnauthenticate" [routerLink]="['/login']">PSBM LOGIN</button>
+      <button class="btnauthenticate" [routerLink]="['/auth/login']">PSBM LOGIN</button>
     </div>
   </form>
 </div>

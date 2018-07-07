@@ -24,7 +24,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.countries = country_list;
     this.registerForm = this.fb.group({
-      displayName: [''],
       firstName: [''],
       lastName: [''],
       gender: [''],

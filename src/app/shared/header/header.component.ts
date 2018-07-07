@@ -43,7 +43,4 @@ export class HeaderComponent implements OnInit {
     return `Hi, ${this.user.email}`;
   }
 
-  // get userEmail(): Observable<string> {
-
-  // }
 }
