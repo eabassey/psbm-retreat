@@ -8,13 +8,13 @@
           <li *ngIf="user" class="welcome-header">
             <a>{{welcomeUser()}}</a>
           </li>
-          <li>
-            <a>You are logged in as {{userEmail}}</a>
+          <li *ngIf="user">
+            <a>You are logged in as {{user?.email}}</a>
           </li>
-          <li class="avatar-image">
+          <!-- <li class="avatar-image">
             <img src="assets/img/avatar.png" alt="" />
-            <!-- <img *ngIf="(photoURL$ | async) as photo" [src]="photo" alt="" /> -->
-          </li>
+            <img *ngIf="(photoURL$ | async) as photo" [src]="photo" alt="" />
+          </li> -->
         </ul>
       </div>
     </div>
