@@ -5,7 +5,7 @@
     <h3>Update Profile</h3>
     <form class="row" [formGroup]="profileForm" (submit)="updateProfile()">
       <div class="form-group">
-        <div class="row">
+        <!-- <div class="row">
           <div>
             <label class="col s4">Upload Profile Picture:</label>
             <div class="input-field col s8">
@@ -18,10 +18,10 @@
             <div *ngIf="photoURL$ | async; let photo" class="alert alert-info" role="alert">
               File uploaded:
               <img [src]="photo" />
-              <!-- <a [href]="photo">{{photo}}</a> -->
+              <a [href]="photo">{{photo}}</a>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="row">
           <label>First Names:
