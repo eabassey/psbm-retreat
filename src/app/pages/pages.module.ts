@@ -13,12 +13,12 @@ import { HomeComponent } from './home/home.component';
 // import { TelevisionMinistryComponent } from './television-ministry/television-ministry.component';
 // import { PartnershipComponent } from './partnership/partnership.component';
 import { LoginComponent } from './login/login.component';
+import { SharedModule } from '../shared/shared.module';
 // import { RegisterComponent } from './register/register.component';
-import { HeaderComponent } from '../shared/header/header.component';
 
 @NgModule({
-  declarations: [PagesComponent, HomeComponent, HeaderComponent],
-  imports: [CommonModule, PagesRoutingModule],
+  declarations: [PagesComponent, HomeComponent],
+  imports: [CommonModule, PagesRoutingModule, SharedModule],
   providers: []
 })
-export class PagesModule { }
+export class PagesModule {}
