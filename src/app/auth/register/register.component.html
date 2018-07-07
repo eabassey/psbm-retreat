@@ -82,10 +82,11 @@
 
     <div>
       <span *ngIf="errorMessage$ | async as error" style="color:red">{{error}}</span>
-      <button class="btnauthenticate" [disabled]="registerForm.invalid || (loading$ | async)">
+      <!-- <button class="btnauthenticate" [disabled]="registerForm.invalid || (loading$ | async)">
         Create Account
         <i *ngIf="loading$ | async" class="fas fa-spinner fa-pulse"></i>
-      </button>
+      </button> -->
+      <input type="submit" value="register">
       <button class="btnauthenticate" [routerLink]="['/auth/login']">PSBM LOGIN</button>
     </div>
   </form>
