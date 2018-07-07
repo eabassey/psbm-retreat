@@ -31,6 +31,7 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.initializeForm();
     this.afAuth.user
       .pipe(
         takeWhile(user => !!user),
@@ -54,9 +55,18 @@ export class ProfileComponent implements OnInit {
     this.countries = country_list;
   }
 
-  initializeForm(value: any) {
+  initializeForm(
+    value: any = {
+      firstNames: '',
+      lastName: '',
+      gender: '',
+      dateOfBirth: '',
+      country: '',
+      idNumber: '',
+      mobileNumber: ''
+    }
+  ) {
     this.profileForm = this.fb.group({
-      displayName: value.displayName,
       firstNames: value.firstNames,
       lastName: value.lastName,
       gender: value.gender,
