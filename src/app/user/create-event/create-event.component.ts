@@ -3,7 +3,8 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
-import { filter, tap, takeWhile } from 'rxjs/operators';
+import { filter, tap, takeWhile, map } from 'rxjs/operators';
+import { AuthService } from '../../auth/services/auth.service';
 
 @Component({
   selector: 'app-create-event',
@@ -13,10 +14,12 @@ import { filter, tap, takeWhile } from 'rxjs/operators';
 export class CreateEventComponent implements OnInit {
   createEventForm: FormGroup;
   currentEvents: any;
+  currentUserInfo: any;
   constructor(
     private router: Router,
     private fb: FormBuilder,
-    private db: AngularFirestore
+    private db: AngularFirestore,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -26,18 +29,27 @@ export class CreateEventComponent implements OnInit {
       .pipe(
         takeWhile(ev => !!ev),
         tap(console.log)
-      ).subscribe(events => this.currentEvents = events);
+      )
+      .subscribe(events => (this.currentEvents = events));
+
+    this.authService
+      .getFullUserData()
+      .subscribe(info => (this.currentUserInfo = info));
+
     this.createEventForm = this.fb.group({
-      selectedEvent: ['']
+      selectedEvent: []
     });
   }
 
   selectEvent(event) {
+    this.createEventForm.get('selectedEvent').setValue(event);
     console.log(`Selected: ${JSON.stringify(event)}`);
   }
 
   createEvent() {
     // Post to server here..
-    this.router.navigate(['/user/user-events']);
+    console.log({ ...this.currentUserInfo, ...this.createEventForm.value });
+    // this.db.collection('/eventRegistrations').add({});
+    // this.router.navigate(['/user/user-events']);
   }
 }
