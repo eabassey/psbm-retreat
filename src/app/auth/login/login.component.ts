@@ -5,6 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { DeviceDetectorService } from 'ngx-device-detector';
 import { ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  errorMessage: any;
+
+  errorMessage$: Observable<any>;
   loginForm: FormGroup;
   constructor(
     public authService: AuthService,
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit {
     private db: AngularFirestore,
     private deviceService: DeviceDetectorService,
     private fb: FormBuilder
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -59,7 +61,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/user/dashboard']);
         this.email = this.password = '';
       })
-      .catch(error => (this.errorMessage = error));
+      .catch(error => (this.errorMessage$ = error));
   }
 
   logout() {

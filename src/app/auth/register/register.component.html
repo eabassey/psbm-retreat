@@ -2,91 +2,92 @@
   <img src="assets/img/logo-copy.png" alt="">
 </div>
 <div class="logo-wording-register">
-  PROPHET SHEPHERD BUSHIRI MINISTRIES
+  <b>PROPHET SHEPHERD BUSHIRI MINISTRIES</b>
 </div>
 
-<div class="main-login-register">
-  <form [formGroup]="registerForm" (submit)="register()" class="account_form_register">
+<div class="main-register-form" (submit)="register()">
+  <form [formGroup]="registerForm" class="account_form_register">
+    <div class="register-main">
+      <div class="row-grid">
 
-    <h2 class="text text-center">CREATE PSBM ACCOUNT</h2>
+        <span *ngIf="registerForm.get('firstNames').touched && registerForm.get('firstNames').invalid">
 
-    <fieldset>
-
-      <legend>
-
-        <div class="register-main">
-          <div class="row-grid">
-
-            <span *ngIf="registerForm.get('firstNames').touched && registerForm.get('firstNames').invalid">
-
-            </span>
-            <input type="text" formControlName="firstNames" class="field-text" placeholder="First Names">
+        </span>
+        <input type="text" formControlName="firstNames" class="field-text" placeholder="First Names">
 
 
-            <span *ngIf="registerForm.get('lastName').touched && registerForm.get('lastName').invalid">
+        <span *ngIf="registerForm.get('lastName').touched && registerForm.get('lastName').invalid">
 
-            </span>
-            <input type="text" formControlName="lastName" class="field-text" placeholder="Last Name">
+        </span>
+        <input type="text" formControlName="lastName" class="field-text" placeholder="Last Name">
 
-            <span *ngIf="registerForm.get('gender').touched && registerForm.get('gender').invalid">
+        <span *ngIf="registerForm.get('gender').touched && registerForm.get('gender').invalid">
 
-            </span>
-            <input type="text" formControlName="gender" class="field-text" placeholder="GENDER">
+        </span>
+        <input type="text" formControlName="gender" class="field-text" placeholder="GENDER">
 
+        <span *ngIf="registerForm.get('country').touched && registerForm.get('country').invalid">
 
-            <span *ngIf="registerForm.get('country').touched && registerForm.get('country').invalid">
-
-            </span>
-            <input type="text" formControlName="country" class="field-text" placeholder="COUNTRY">
-          </div>
+        </span>
+        <input type="text" formControlName="country" class="field-text" placeholder="COUNTRY">
+      </div>
 
 
 
-          <div class="row-grid">
+      <div class="row-grid">
 
-            <span *ngIf="registerForm.get('mobilePhone').touched && registerForm.get('mobilePhone').invalid">
+        <span *ngIf="registerForm.get('mobilePhone').touched && registerForm.get('mobilePhone').invalid">
 
-            </span>
-            <input type="text" formControlName="mobilePhone" class="field-text" placeholder="Mobile Number">
-
-
-            <span *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">
-
-            </span>
-            <input type="email" formControlName="email" class="field-text" placeholder="Email Address">
+        </span>
+        <input type="text" formControlName="mobilePhone" class="field-text" placeholder="Mobile Number">
 
 
-            <!-- <span *ngIf="registerForm.get('password').invalid && (registerForm.get('password').value !== registerForm.get('confirmPassword').value)">
+        <span *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid">
+
+        </span>
+        <input type="text" formControlName="email" class="field-text" placeholder="Email Address">
+
+
+        <!-- <span *ngIf="registerForm.get('password').invalid && (registerForm.get('password').value !== registerForm.get('confirmPassword').value)">
                   <small style="color:red">Passwords do not match</small>
                   <br />
               </span> -->
-            <span *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
+        <span *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
 
-            </span>
-            <input type="password" formControlName="password" class="field-text" placeholder="PASSWORD">
+        </span>
+        <input type="password" formControlName="password" class="field-text" placeholder="PASSWORD">
 
 
-            <span *ngIf="registerForm.get('confirmPassword').touched && (registerForm.get('password').value !== registerForm.get('confirmPassword').value)">
+        <span *ngIf="registerForm.get('confirmPassword').touched && (registerForm.get('password').value !== registerForm.get('confirmPassword').value)">
 
-              <br />
-            </span>
+          <br />
+        </span>
 
-            <span *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid">
+        <span *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid">
 
-            </span>
-            <input type="password" formControlName="confirmPassword" class="field-text" placeholder="CONFIRM PASSWORD">
-          </div>
-        </div>
-      </legend>
-    </fieldset>
+        </span>
+        <input type="password" formControlName="confirmPassword" class="field-text" placeholder="CONFIRM PASSWORD">
+      </div>
+    </div>
 
     <div>
       <span *ngIf="errorMessage$ | async as error" style="color:red">{{error}}</span>
-      <button class="btnauthenticate" [disabled]="registerForm.invalid || (loading$ | async)">
+      <!-- <button class="btnauthenticate" [disabled]="registerForm.invalid || (loading$ | async)">
         Create Account
         <i *ngIf="loading$ | async" class="fas fa-spinner fa-pulse"></i>
-      </button>
-      <button class="btnauthenticate" [routerLink]="['/auth/login']">PSBM LOGIN</button>
+      </button> -->
+      <input type="submit" value="register">
+
+      <div class="main-links">
+
+        <a [routerLink]="['/auth/login']"> Have you got an account? Click here to Login</a>
+      </div>
+
     </div>
   </form>
+</div>
+
+
+<div class="main-login-register">
+
 </div>
