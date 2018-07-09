@@ -24,7 +24,7 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/user',
+    redirectTo: '/user/dashboard',
     pathMatch: 'full'
   },
   {
