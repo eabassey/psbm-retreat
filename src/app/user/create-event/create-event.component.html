@@ -6,7 +6,8 @@
       <div class="form-group">
         <div class="row">
           <label>Select Event:</label>
-          <kendo-dropdownlist [data]="currentEvents" style="width: 500px;" formControlName="selectedEvent">
+          <kendo-dropdownlist [data]="currentEvents" [textField]="'name'" [valueField]="'country'" (valueChange)="selectEvent($event)"
+            style="width: 500px;" formControlName="selectedEvent">
           </kendo-dropdownlist>
         </div>
 
