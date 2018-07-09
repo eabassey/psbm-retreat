@@ -5733,9 +5733,26 @@ form .stars label:before {
   border-radius: 2px;
 }
 
-.selectingoo {
-  color: #fff;
-  background-color: #000;
+.event-description {
+  margin-left: 62%;
+  position: absolute;
+  margin-top: 6%;
+}
+
+.event-description p {
+  color: #2a2b33;
+  font-size: 16px;
+}
+
+.event-description .cards {
+  width: 300px;
+}
+
+.paypal-payment-banner {
+  margin-top: 40px;
+}
+
+.paypal-payment-banner img {
+  margin-top: 40%;
   width: 500px;
-  height: 100px;
 }
