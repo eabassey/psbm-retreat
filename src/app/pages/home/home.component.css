@@ -28,6 +28,10 @@
   border-left: 0;
 }
 
+.greeting-header {
+  font-size: 26px;
+}
+
 .fullscreen-bg__video {
   position: relative;
   height: 100%;

@@ -39,23 +39,23 @@ export class LoginComponent implements OnInit {
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .then(value => {
         // Store user login timestamp and env for audit
-        // this.db
-        //   .collection(`/users`)
-        //   .doc(value.user.uid)
-        //   .collection('/logins')
-        //   .add({
-        //     timestamp: value.user.metadata.lastSignInTime,
-        //     browser: this.deviceService.browser,
-        //     browserVersion: this.deviceService.browser_version,
-        //     os: this.deviceService.os,
-        //     userAgent: this.deviceService.userAgent,
-        //     ua: this.deviceService.ua
-        //   });
+        this.db
+          .collection(`/users`)
+          .doc(value.user.uid)
+          .collection('/logins')
+          .add({
+            timestamp: value.user.metadata.lastSignInTime,
+            browser: this.deviceService.browser,
+            browserVersion: this.deviceService.browser_version,
+            os: this.deviceService.os,
+            userAgent: this.deviceService.userAgent,
+            ua: this.deviceService.ua
+          });
 
         // Get full user data
-        // this.authService
-        //   .getFullUserData()
-        //   .subscribe(u => console.log('Checking login user: ', u));
+        this.authService
+          .getFullUserData()
+          .subscribe(u => console.log('Checking login user: ', u));
 
         // On successful login redirect to user dashboard
         this.router.navigate(['/user/dashboard']);
