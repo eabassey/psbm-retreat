@@ -49,6 +49,7 @@ export class ProfileComponent implements OnInit {
       )
       .subscribe(userInfo => {
         this.userInfo = userInfo;
+        console.log('Checking userinfo for date: ', userInfo);
         this.initializeForm(userInfo);
       });
 
@@ -60,17 +61,16 @@ export class ProfileComponent implements OnInit {
       firstNames: '',
       lastName: '',
       gender: '',
-      dateOfBirth: '',
       country: '',
       idNumber: '',
       mobileNumber: ''
     }
   ) {
+    const ts = value.dateOfBirth as firebase.firestore.Timestamp;
     this.profileForm = this.fb.group({
       firstNames: value.firstNames,
       lastName: value.lastName,
       gender: value.gender,
-      dateOfBirth: value.dateOfBirth,
       country: value.country,
       idNumber: value.idNumber,
       mobilePhone: value.mobilePhone

@@ -57,7 +57,7 @@ export class AuthService {
       .pipe(
         switchMap(user => {
           if (user) {
-            console.log('To Database for user: ', user);
+            console.log('UPDATE To Database for user: ', user);
             return this.db
               .collection(`/users`)
               .doc(user.uid)
