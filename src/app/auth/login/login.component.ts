@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     private db: AngularFirestore,
     private deviceService: DeviceDetectorService,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           .subscribe(u => console.log('Checking login user: ', u));
 
         // On successful login redirect to user dashboard
-        this.router.navigate(['/user/dashboard']);
+        this.router.navigate(['/pages/home']);
         this.email = this.password = '';
       })
       .catch(error => (this.errorMessage$ = error));
