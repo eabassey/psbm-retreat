@@ -75,14 +75,13 @@ body {
 /* login an register */
 
 .main-login-register {
-  background: url(/assets/img/building2.gif) no-repeat;
+  background-color: #2a2b33;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
   position: fixed;
   color: #fff;
-  -webkit-filter: grayscale(100%);
 }
 
 .account_form_register {
@@ -122,14 +121,13 @@ body {
   display: flex;
   /* grid-template-columns: 1fr; */
   justify-content: center;
-  background: url(/assets/img/building2.gif) no-repeat;
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
   position: fixed;
   color: #fff;
-  -webkit-filter: grayscale(100%);
+  background-color: #2a2b33;
 }
 
 .account_form {
@@ -137,7 +135,7 @@ body {
   width: 40%;
   padding: 40px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
   text-align: center;
 }
@@ -155,7 +153,7 @@ body {
   width: 40%;
   padding: 40px;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
   color: #fff;
   text-align: center;
 }
@@ -2257,11 +2255,14 @@ td {}
 /*-------------------------------------------------*/
 
 .dashboard {
-  position: relative;
+  position: fixed;
   overflow: hidden;
   margin-top: 72px;
-  margin-bottom: 55px;
   background: linear-gradient(to top, #273237 14%, #f3354e 66%);
+  height: 80em;
+  width: 100%;
+  background-size: contain;
+  object-fit: cover;
 }
 
 .db-left {
@@ -5834,4 +5835,51 @@ form .stars label:before {
   float: right;
   margin-top: -8%;
   margin-right: 2%;
+}
+
+/* profile section */
+
+.avatar-image {
+  height: 50px;
+  width: 50px;
+}
+
+.avatar-image img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  border: solid 3px #e8c57a;
+}
+
+.welcome-header {
+  margin-top: 20px;
+  position: absolute;
+  margin-left: -23%;
+}
+
+.row span {
+  position: absolute;
+  width: 280px;
+  margin-left: -190px;
+  margin-top: 14px;
+  font-size: 12px;
+  color: #e8c57a;
+}
+
+.row span {
+  padding-top: 45px;
+  padding-left: 40px;
+}
+
+.logo span {
+  padding-top: 20px;
+  padding-left: 160px;
+  width: 100%;
+}
+
+.menu-bar a {
+  color: #cbcbcb;
+  cursor: pointer;
+  padding: 5px;
 }

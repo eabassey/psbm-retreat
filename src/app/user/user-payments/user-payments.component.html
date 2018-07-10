@@ -1,3 +1,47 @@
+<div class="logo-wording-register">
+  <b>PROPHET SHEPHERD BUSHIRI MINISTRIES</b>
+</div>
+<div class="menu-section">
+  <div class="container">
+    <div class="row">
+      <div class="top-bar">
+        <ul>
+          <li *ngIf="user" class="welcome-header">
+            <a>{{welcomeUser()}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="logo">
+        <a>
+          <img src="assets/img/logo-copy.png" alt="" />
+        </a>
+
+      </div>
+
+      <div class="menu-bar">
+        <ul>
+
+          <li [routerLink]="['/user/profile']">
+            <!-- <a routerLink="/user/profile">My Profile</a> -->
+            <a [routerLink]="['/user/profile']"> My Profile</a>
+          </li>
+          <li>
+            <a (click)="logout()">Logout</a>
+          </li>
+          <!-- <li *ngIf="!user">
+                <a routerLink="/auth/login">Login</a>
+              </li>
+              <li *ngIf="!user">
+                <a routerLink="/auth/register">Register</a>
+              </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="db-cent">
   <app-welcome-header></app-welcome-header>
   <div class="db-cent-3">
