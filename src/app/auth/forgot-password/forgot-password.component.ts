@@ -16,7 +16,7 @@ export class ForgotPasswordComponent {
     // console.log('Test mail: ', email);
     this.authService
       .resetPassword(email)
-      .then(() => this.router.navigate(['/send-confirm']))
+      .then(() => this.router.navigate(['/auth/send-confirm']))
       .catch(error => (this.errorMessage = error));
   }
 }
