@@ -21,19 +21,18 @@
       <div class="menu-bar">
         <ul>
 
-          <li [routerLink]="['/user/profile']">
-            <!-- <a routerLink="/user/profile">My Profile</a> -->
+          <li *ngIf="user">
             <a [routerLink]="['/user/profile']"> My Profile</a>
           </li>
-          <li>
+          <li *ngIf="user">
             <a (click)="logout()">Logout</a>
           </li>
-          <!-- <li *ngIf="!user">
+          <li *ngIf="!user">
             <a routerLink="/auth/login">Login</a>
           </li>
           <li *ngIf="!user">
             <a routerLink="/auth/register">Register</a>
-          </li> -->
+          </li>
         </ul>
       </div>
     </div>

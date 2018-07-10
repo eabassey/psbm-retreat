@@ -24,12 +24,13 @@ import { DeviceDetectorModule } from 'ngx-device-detector';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/user/dashboard',
+    redirectTo: '/auth/login',
     pathMatch: 'full'
   },
   {
     path: 'pages',
-    loadChildren: './pages/pages.module#PagesModule'
+    loadChildren: './pages/pages.module#PagesModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'user',
@@ -70,4 +71,4 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
