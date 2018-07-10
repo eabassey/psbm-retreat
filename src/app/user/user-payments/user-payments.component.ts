@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-user-payments',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-payments.component.css']
 })
 export class UserPaymentsComponent implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  generateCode() {
+    this.router.navigate(['/confirmation/conference']);
   }
-
 }

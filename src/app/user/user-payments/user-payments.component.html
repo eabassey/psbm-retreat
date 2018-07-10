@@ -15,6 +15,7 @@
             <th>City</th>
             <th>Amount</th>
             <th>Status</th>
+            <th>Generate QR Code</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,9 @@
             <td>$680</td>
             <td>
               <a href="#" class="db-success">Success</a>
+            </td>
+            <td>
+              <button class="btn-sm btn-info" (click)="generateCode()">Generate</button>
             </td>
           </tr>
         </tbody>
