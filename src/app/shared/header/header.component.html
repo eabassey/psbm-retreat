@@ -4,17 +4,9 @@
     <div class="row">
       <div class="top-bar">
         <ul>
-
           <li *ngIf="user" class="welcome-header">
             <a>{{welcomeUser()}}</a>
           </li>
-          <li *ngIf="user">
-            <a>You are logged in as {{user?.email}}</a>
-          </li>
-          <!-- <li class="avatar-image">
-            <img src="assets/img/avatar.png" alt="" />
-            <img *ngIf="(photoURL$ | async) as photo" [src]="photo" alt="" />
-          </li> -->
         </ul>
       </div>
     </div>
@@ -29,20 +21,19 @@
       <div class="menu-bar">
         <ul>
 
-          <li>
+          <li [routerLink]="['/user/profile']">
             <!-- <a routerLink="/user/profile">My Profile</a> -->
             <a [routerLink]="['/user/profile']"> My Profile</a>
-            
           </li>
-          <li *ngIf="!user">
+          <li>
             <a (click)="logout()">Logout</a>
           </li>
-          <li *ngIf="!user">
+          <!-- <li *ngIf="!user">
             <a routerLink="/auth/login">Login</a>
           </li>
           <li *ngIf="!user">
             <a routerLink="/auth/register">Register</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

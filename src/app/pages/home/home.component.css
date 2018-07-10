@@ -12,39 +12,6 @@
   margin-bottom: 100px;
 }
 
-.fullscreen-bg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  width: 60%;
-  height: 100%;
-  border: solid 40px #e8c57a;
-  /* border-radius: 500px; */
-  /* border-top-right-radius: 500px; */
-  border-bottom-right-radius: 500px;
-  border-left: 0;
-}
-
-.greeting-header {
-  font-size: 26px;
-}
-
-.fullscreen-bg__video {
-  position: relative;
-  height: 100%;
-  filter: grayscale(100%);
-  background-size: cover;
-}
-
-.fullscreen-bg__video source {
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-}
-
 .scroll-animation-button {
   position: absolute;
   text-align: center;
@@ -123,32 +90,7 @@
   color: #e8c57a;
 }
 
-.cards {
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-left: 10px;
-  padding-bottom: 10px;
-  background: #2a2b33;
-  border-radius: 12px;
-  /* box-shadow: outset 4px 4px 4px 4px #2a2b33; */
-  box-shadow: 0px 20px 30px 3px rgba(0, 0, 0, 0.55);
-  margin-top: 10%;
-  margin-left: 20%;
-  position: absolute;
-}
 
-.cards:hover {
-  background: #e8c57a;
-  /* box-shadow: outset 4px 4px 4px 4px #2a2b33; */
-  box-shadow: 0px 20px 30px 3px #635a48;
-  cursor: pointer;
-}
-
-.badge-icon img {
-  margin-left: 40%;
-  height: 80px;
-  width: 80px;
-}
 
 .badge-description h4 {
   color: #fff;

@@ -17,6 +17,7 @@ import { ButtonsModule, ButtonModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     UserComponent,
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserPaymentsComponent,
     MakePaymentComponent,
     WelcomeHeaderComponent,
-    CreateEventComponent
+    CreateEventComponent,
+
   ],
   imports: [
     CommonModule,
@@ -41,4 +43,4 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: []
 })
-export class UserModule {}
+export class UserModule { }

@@ -11,4 +11,4 @@ import { HeaderComponent } from './header/header.component';
   providers: [],
   exports: [FooterComponent, HeaderComponent]
 })
-export class SharedModule {}
+export class SharedModule { }

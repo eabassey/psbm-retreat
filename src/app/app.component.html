@@ -7,7 +7,12 @@
                     <img class="img img-responsive" src="assets/img/logo.png" alt="" />
                 </a>
             </div> -->
-      <span>Prophet Shepherd Bushiri Ministries</span>
+      <div class="logo">
+        <a>
+          <img src="assets/img/logo-copy.png" alt="" />
+        </a>
+
+      </div>
       <div class="mm-icon">
         <span>
           <i class="fa fa-bars show-menu" aria-hidden="true"></i>
@@ -24,13 +29,13 @@
             <a routerLink="/pages/home">Home</a>
           </li>
 
-          <!-- <li *ngIf="isOnline()">
-                        <a>My Profile</a>
-                    </li>
-                    <li *ngIf="isOnline()">
-                        <a (click)="logout()">Logout</a>
-                    </li>
-                    <li *ngIf="!isOnline()">
+          <li *ngIf="isOnline()">
+            <a routerLink="/pages/home">My Profile</a>
+          </li>
+          <li *ngIf="isOnline()">
+            <a (click)="logout()">Logout</a>
+          </li>
+          <!-- <li *ngIf="!isOnline()">
                         <a (click)="login()">Login</a>
                     </li> -->
         </ul>

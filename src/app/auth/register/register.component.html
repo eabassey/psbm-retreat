@@ -24,12 +24,12 @@
         <span *ngIf="registerForm.get('gender').touched && registerForm.get('gender').invalid">
 
         </span>
-        <input type="text" formControlName="gender" class="field-text" placeholder="GENDER">
+        <input type="text" formControlName="gender" class="field-text" placeholder="Gender">
 
         <span *ngIf="registerForm.get('country').touched && registerForm.get('country').invalid">
 
         </span>
-        <input type="text" formControlName="country" class="field-text" placeholder="COUNTRY">
+        <input type="text" formControlName="country" class="field-text" placeholder="Country">
       </div>
 
 
@@ -55,7 +55,7 @@
         <span *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid">
 
         </span>
-        <input type="password" formControlName="password" class="field-text" placeholder="PASSWORD">
+        <input type="password" formControlName="password" class="field-text" placeholder="Password">
 
 
         <span *ngIf="registerForm.get('confirmPassword').touched && (registerForm.get('password').value !== registerForm.get('confirmPassword').value)">
@@ -66,7 +66,7 @@
         <span *ngIf="registerForm.get('confirmPassword').touched && registerForm.get('confirmPassword').invalid">
 
         </span>
-        <input type="password" formControlName="confirmPassword" class="field-text" placeholder="CONFIRM PASSWORD">
+        <input type="password" formControlName="confirmPassword" class="field-text" placeholder="Confirm Password">
       </div>
     </div>
 

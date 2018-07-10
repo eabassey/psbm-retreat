@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private storage: AngularFireStorage
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.authService.currentUser$
@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
   }
 
   welcomeUser() {
-    return `Hi, ${this.user.email}`;
+    return `You are logged in as, ${this.user.email}`;
   }
 
 }
